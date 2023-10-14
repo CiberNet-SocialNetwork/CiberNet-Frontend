@@ -60,5 +60,5 @@ jobs:
         with:
           app-name: 'cibernet'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_843ECBB1E9724BD1965A4AF9F271F1B8 }}
+          publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
           package: .
