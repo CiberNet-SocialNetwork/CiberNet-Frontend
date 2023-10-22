@@ -5,7 +5,6 @@ import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
-import { TestComponent } from './component/test/test.component';
 import { LoginComponent } from './component/login/login.component';
 import { SignupComponent } from './component/signup/signup.component';
 import { DashboardComponent } from './component/dashboard/dashboard.component';
@@ -16,11 +15,11 @@ import { CommentComponent } from './component/comment/comment.component';
 import { NavbarComponent } from './component/navbar/navbar.component';
 import { FeedComponent } from './component/feed/feed.component';
 import { SidebarComponent } from './component/sidebar/sidebar.component';
+import { FooterComponent } from './component/footer/footer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TestComponent,
     LoginComponent,
     SignupComponent,
     DashboardComponent,
@@ -30,7 +29,8 @@ import { SidebarComponent } from './component/sidebar/sidebar.component';
     CommentComponent,
     NavbarComponent,
     FeedComponent,
-    SidebarComponent
+    SidebarComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
