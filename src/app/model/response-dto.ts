@@ -1,6 +1,6 @@
 export class ResponseDto {
     statusCode?: number
     message?: string
-    error?: boolean
+    isError?: boolean
     data?: any
 }

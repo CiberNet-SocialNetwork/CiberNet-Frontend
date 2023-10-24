@@ -12,35 +12,29 @@ export class UserService {
   currentUser: User = {}
 
   constructor(private httpClient: HttpClient) { }
+  
   getUsers(): Observable<User[]> {
     let url = "/findAll"
     return this.httpClient.get<User[]>(this.basePath+url)
   }
   getUserById(id: number): Observable<User> {
-    let url = "/findById"    
-    const params = new HttpParams().set('id', id)
-    return this.httpClient.get<User>(this.basePath+url,{params})
+    let url = `/findById/${id}`
+    return this.httpClient.get<User>(this.basePath+url)
+  }
+  login(user: User){
+    let url= "/login"
+    return this.httpClient.post<ResponseDto>(this.basePath+url, user).pipe()
   }
   createUser(user: User): Observable<ResponseDto> {
     let url= "/create"
     return this.httpClient.post<ResponseDto>(this.basePath+url, user).pipe()
-  }
-  login(userName: string, password: string){
-    let url= "/login"
-    // const params = new HttpParams().set('username', userName).set('password', password)
-    // return this.httpClient.post<ResponseDto>(this.basePath+url, null, {params}).pipe()
-    const user = new User()
-    user.username = userName
-    user.password = password
-    return this.httpClient.post<ResponseDto>(this.basePath+url, user).pipe()
-  }
+  }  
   updateUser(user: User): Observable<ResponseDto> {
-    let url= "/update"
+    let url= `/update/${user.id}`
     return this.httpClient.put<ResponseDto>(this.basePath+url, user).pipe()
   }
-  deleteUser(userId: number): Observable<ResponseDto> {
-    let url= "/delete"
-    const params = new HttpParams().set('id', userId)
-    return this.httpClient.delete<ResponseDto>(this.basePath+url, {params}).pipe()
+  deleteUser(id: number): Observable<ResponseDto> {
+    let url= `/delete/${id}`
+    return this.httpClient.delete<ResponseDto>(this.basePath+url).pipe()
   }
 }

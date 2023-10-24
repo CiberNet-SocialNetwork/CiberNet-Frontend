@@ -21,7 +21,7 @@ export class LoginComponent {
     this.userService.getUsers().subscribe(res=> alert(JSON.stringify(res)))
   }
   login(loginDTO: any){
-    this.userService.login(loginDTO.username,loginDTO.password).subscribe(res=> {
+    this.userService.login(loginDTO).subscribe(res=> {
       if(res.statusCode == 200){
         localStorage.setItem('currentUser', JSON.stringify(res.data))
         this.router.navigate(['/dashboard'],{queryParams:{ id: res.data.userId }})

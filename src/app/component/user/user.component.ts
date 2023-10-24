@@ -1,4 +1,8 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { Subscription } from 'rxjs';
+import { User } from 'src/app/model/user';
+import { UserService } from 'src/app/service/user.service';
 
 @Component({
   selector: 'app-user',
@@ -6,5 +10,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./user.component.css']
 })
 export class UserComponent {
+  users: User[] = []
+  changePassword: boolean = false
+  loginEventSubscription: Subscription = new Subscription()
 
+  constructor(private userService: UserService, private router: Router){
+    this.userService.getUsers().subscribe(res=>{
+      this.users = res
+    })
+  }
 }
