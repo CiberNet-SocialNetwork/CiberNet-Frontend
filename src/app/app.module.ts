@@ -16,6 +16,8 @@ import { NavbarComponent } from './component/navbar/navbar.component';
 import { FeedComponent } from './component/feed/feed.component';
 import { SidebarComponent } from './component/sidebar/sidebar.component';
 import { FooterComponent } from './component/footer/footer.component';
+import { FriendProfilesComponent } from './component/friend-profiles/friend-profiles.component';
+import { FriendProfileDetailComponent } from './component/friend-profile-detail/friend-profile-detail.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,9 @@ import { FooterComponent } from './component/footer/footer.component';
     NavbarComponent,
     FeedComponent,
     SidebarComponent,
-    FooterComponent
+    FooterComponent,
+    FriendProfilesComponent,
+    FriendProfileDetailComponent
   ],
   imports: [
     BrowserModule,
@@ -46,6 +50,8 @@ import { FooterComponent } from './component/footer/footer.component';
       {path: 'profile', component: ProfileComponent},
       {path: 'myposts', component: PostComponent},
       {path: 'mycomments', component: CommentComponent},
+      {path: 'friend-profiles', component: FriendProfilesComponent },
+      { path: 'profile/:userId', component: FriendProfileDetailComponent }
     ]),
   ],
   providers: [],

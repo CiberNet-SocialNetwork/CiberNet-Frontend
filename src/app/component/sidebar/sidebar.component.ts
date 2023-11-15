@@ -12,7 +12,9 @@ export class SidebarComponent {
       { icon: "fa fa-home", url: "dashboard", title: "Home"},
       { icon: "fa fa-rocket", url: "users", title: "Usuarios"},
       { icon: "fa-solid fa-bookmark", url: "myposts", title: "Mis Posts"},
-      { icon: "fa-solid fa-comment-dots", url: "mycomments", title: "Mis Comentarios"}
-    ]
+      { icon: "fa-solid fa-comment-dots", url: "mycomments", title: "Mis Comentarios"},
+      { icon: "fa fa-users", url: "friend-profiles", title: "Ver Perfil de Amigos"}
+    ];
+    
   }
 }
