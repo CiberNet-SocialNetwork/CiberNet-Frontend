@@ -11,6 +11,9 @@ export class UserService {
   basePath = "https://api-cibernet.azurewebsites.net/api/user"
   currentUser: User = {}
 
+  private baseUrl = 'http://localhost:8080/api/user';
+ 
+
   constructor(private httpClient: HttpClient) { }
   
   getUsers(): Observable<User[]> {
@@ -36,5 +39,11 @@ export class UserService {
   deleteUser(id: number): Observable<ResponseDto> {
     let url= `/delete/${id}`
     return this.httpClient.delete<ResponseDto>(this.basePath+url).pipe()
+  }
+ 
+
+  searchUser(username: string): Observable<any> {
+    let url= `/search/${username}`
+    return this.httpClient.get(this.baseUrl+url).pipe()
   }
 }

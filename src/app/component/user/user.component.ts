@@ -11,12 +11,27 @@ import { UserService } from 'src/app/service/user.service';
 })
 export class UserComponent {
   users: User[] = []
+  filtro!: string;
   changePassword: boolean = false
   loginEventSubscription: Subscription = new Subscription()
+  username: string = '';
+
 
   constructor(private userService: UserService, private router: Router){
     this.userService.getUsers().subscribe(res=>{
       this.users = res
     })
   }
+
+
+  searchUser(): void {
+    this.userService.searchUser(this.username)
+    .subscribe((res: any) => {
+      this.users = res.data;
+    });
+  }
+ 
+ 
+ 
+ 
 }
