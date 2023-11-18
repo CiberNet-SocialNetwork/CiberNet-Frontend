@@ -8,7 +8,7 @@ import { ResponseDto } from '../model/response-dto';
   providedIn: 'root'
 })
 export class UserService {
-  basePath = "https://api-cibernet.azurewebsites.net/api/user"
+  basePath = "http://localhost:8080/api/user"
   currentUser: User = {}
 
   constructor(private httpClient: HttpClient) { }

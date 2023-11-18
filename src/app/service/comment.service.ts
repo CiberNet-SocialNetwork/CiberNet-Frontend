@@ -9,7 +9,7 @@ import { Comment } from '../model/comment';
 })
 export class CommentService {
   
-  basePath = "https://api-cibernet.azurewebsites.net/api/comment"
+  basePath = "http://localhost:8080/api/comment"
 
   constructor(private httpClient: HttpClient) { }
 
