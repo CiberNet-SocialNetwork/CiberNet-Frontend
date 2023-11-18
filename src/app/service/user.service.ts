@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { User } from '../model/user';
-import { Observable } from 'rxjs';
+import { Observable, map } from 'rxjs';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { ResponseDto } from '../model/response-dto';
 
@@ -9,10 +9,7 @@ import { ResponseDto } from '../model/response-dto';
 })
 export class UserService {
   basePath = "https://api-cibernet.azurewebsites.net/api/user"
-  currentUser: User = {}
-
-  private baseUrl = 'http://localhost:8080/api/user';
- 
+  currentUser: User = {} 
 
   constructor(private httpClient: HttpClient) { }
   
@@ -40,10 +37,8 @@ export class UserService {
     let url= `/delete/${id}`
     return this.httpClient.delete<ResponseDto>(this.basePath+url).pipe()
   }
- 
-
-  searchUser(username: string): Observable<any> {
+  searchUser(username: string): Observable<ResponseDto> {
     let url= `/search/${username}`
-    return this.httpClient.get(this.baseUrl+url).pipe()
+    return this.httpClient.get<ResponseDto>(this.basePath+url).pipe(map(res=>res.data))
   }
 }
