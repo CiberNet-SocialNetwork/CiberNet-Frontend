@@ -7,7 +7,7 @@ import { Post } from '../model/post';
   providedIn: 'root'
 })
 export class PostService {
-  basePath = "https://api-cibernet.azurewebsites.net/api/post"
+  basePath = "http://localhost:8080/api/post"
 
   constructor(private httpClient: HttpClient) { }
 
