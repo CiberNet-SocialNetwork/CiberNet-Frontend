@@ -27,4 +27,9 @@ export class UserComponent {
       this.users = res;
     });
   }
+  getAll(){
+    this.userService.getUsers().subscribe(res=>{
+      this.users = res
+    })
+  }
 }

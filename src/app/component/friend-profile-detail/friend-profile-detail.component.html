@@ -4,13 +4,13 @@
       <app-sidebar></app-sidebar>
     </div>
   </div>
-  <div class="container mt-5">
-    <div class="col-md-9">
+  <div class="container row justify-content-betweend-flex">
+    <div class="col-md-9 container p-0">
       <!-- Contenido principal con detalles del perfil -->
       <div class="card rounded shadow p-4">
         <h1 class="text-center mb-4">Detalles del perfil del amigo</h1>
         <div *ngIf="selectedUser">
-          <div class="row">
+          <div class="row justify-content-center mt-3">
             <div class="col-md-4">
               <!-- Cuadro para la foto de perfil sin borde -->
               <div class="rounded-circle img-container p-3 mb-3 text-center">
@@ -20,7 +20,7 @@
                 <p class="mt-2 mb-0 font-weight-bold">@{{ selectedUser.username }}</p>
               </div>
             </div>
-            <div class="col-md-8 d-flex align-items-center justify-content-center">
+            <div class="col-md-4 align-items-center justify-content-center">
               <!-- Detalles del perfil -->
               <div>
                 <p class="font-size-lg"><strong>Nombres:</strong> {{ selectedUser.firstName }}</p>
