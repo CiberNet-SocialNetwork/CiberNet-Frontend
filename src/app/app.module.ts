@@ -18,6 +18,7 @@ import { SidebarComponent } from './component/sidebar/sidebar.component';
 import { FooterComponent } from './component/footer/footer.component';
 import { FriendProfilesComponent } from './component/friend-profiles/friend-profiles.component';
 import { FriendProfileDetailComponent } from './component/friend-profile-detail/friend-profile-detail.component';
+import { FriendPostComponent } from './component/friend-post/friend-post.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { FriendProfileDetailComponent } from './component/friend-profile-detail/
     SidebarComponent,
     FooterComponent,
     FriendProfilesComponent,
-    FriendProfileDetailComponent
+    FriendProfileDetailComponent,
+    FriendPostComponent
   ],
   imports: [
     BrowserModule,
@@ -51,7 +53,8 @@ import { FriendProfileDetailComponent } from './component/friend-profile-detail/
       {path: 'myposts', component: PostComponent},
       {path: 'mycomments', component: CommentComponent},
       {path: 'friend-profiles', component: FriendProfilesComponent },
-      { path: 'profile/:userId', component: FriendProfileDetailComponent }
+      { path: 'profile/:userId', component: FriendProfileDetailComponent },
+      { path: 'posts/:userId', component: FriendPostComponent }
     ]),
   ],
   providers: [],

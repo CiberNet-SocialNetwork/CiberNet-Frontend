@@ -15,6 +15,7 @@ export class UserComponent {
   changePassword: boolean = false
   loginEventSubscription: Subscription = new Subscription()
   username: string = '';
+  selectedUser: any = null;
 
   constructor(private userService: UserService, private router: Router){
     this.userService.getUsers().subscribe(res=>{
@@ -31,5 +32,10 @@ export class UserComponent {
     this.userService.getUsers().subscribe(res=>{
       this.users = res
     })
+  }
+  viewPosts(user: any): void {
+    this.selectedUser = user;
+    console.log(`Navigating to profile for user ID: ${user.id}`);
+    this.router.navigate(['/posts', user.id]);
   }
 }
